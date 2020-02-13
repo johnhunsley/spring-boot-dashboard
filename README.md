@@ -18,5 +18,5 @@ Grafana UI - http://localhost:3000
 
 
 Run both prometheus and grafana with the script -
-
-``./dashboards.sh``
+``docker build . -t spring-boot-dashboard``
+``docker-compose up``

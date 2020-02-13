@@ -1,0 +1,20 @@
+version: "3.1"
+services:
+  spring-app:
+    image: spring-boot-dashboard:latest
+    environment:
+      - JAVA_OPTS=-Xms128M -Xmx512M
+    ports:
+      - "8080:8080"
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    environment:
+      - --config.file=/etc/prometheus/prometheus.yml
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
