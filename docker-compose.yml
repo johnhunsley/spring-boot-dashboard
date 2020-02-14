@@ -3,18 +3,28 @@ services:
   spring-app:
     image: spring-boot-dashboard:latest
     environment:
-      - JAVA_OPTS=-Xms128M -Xmx512M
+      - JAVA_OPTS=-Xms128M -Xmx256M
     ports:
       - "8080:8080"
+  rabbitmq:
+    image: rabbitmq:3.8.2-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
   prometheus:
     image: prom/prometheus
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     environment:
       - --config.file=/etc/prometheus/prometheus.yml
   grafana:
     image: grafana/grafana
+    volumes:
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources/
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards/
     ports:
       - "3000:3000"
+    depends_on:
+      - prometheus

@@ -24,3 +24,7 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['spring-app:8080']
+
+  - job_name: 'rabbitmq-server'
+    static_configs:
+      - targets: ['rabbitmq:15672']
