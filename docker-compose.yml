@@ -12,7 +12,7 @@ services:
       - "5672:5672"
       - "15672:15672"
       - "15692:15692"
-#    command: rabbitmq-plugins enable rabbitmq_prometheus
+#    command: llus
   prometheus:
     image: prom/prometheus
     ports:
