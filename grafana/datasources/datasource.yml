@@ -8,3 +8,11 @@ datasources:
     url: http://prometheus:9090
     # don't set this to true in production
     editable: true
+
+  - name: SimpleJson
+    type: grafana-simple-json-datasource
+    access: proxy
+    isDefault: false
+    url: http://localhost:3333
+    # don't set this to true in production
+    editable: true
