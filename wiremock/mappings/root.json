@@ -1,0 +1,59 @@
+{
+    "mappings": [
+	{
+	    "request": {
+		"method": "GET",
+		"urlPathPattern": "/"
+	    },
+	    "response": {
+		"status": 200
+	    }
+	},
+	{
+	    "request": {
+		"method": "OPTIONS",
+		"urlPathPattern": "^(.*)"
+	    },
+	    "response": {
+		"status": 200,
+		"headers": {
+		    "Access-Control-Allow-Headers":"accept, content-type",
+		    "Access-Control-Allow-Methods":"POST",
+		    "Access-Control-Allow-Origin":"*"
+		}		
+	    }
+	},
+        {
+	    "request": {
+		"method": "POST",
+		"urlPathPattern": "/search"
+	    },
+	    "response": {
+		"status": 200,
+		"bodyFileName":"search/postResponse.json",
+		"headers": {
+		    "content-type":"application/json; charset=utf-8",
+		    "Access-Control-Allow-Headers":"accept, content-type",
+		    "Access-Control-Allow-Methods":"POST",
+		    "Access-Control-Allow-Origin":"*"
+		}	
+	    }
+	},
+        {
+	    "request": {
+		"method": "POST",
+		"urlPathPattern": "/query"
+	    },
+	    "response": {
+		"status": 200,
+		"bodyFileName":"query/postResponse.json",
+		"headers": {
+		    "content-type":"application/json; charset=utf-8",
+		    "Access-Control-Allow-Headers":"accept, content-type",
+		    "Access-Control-Allow-Methods":"POST",
+		    "Access-Control-Allow-Origin":"*"
+		}		
+	    }
+	}
+    ]
+}
