@@ -11,8 +11,8 @@ datasources:
 
   - name: SimpleJson
     type: grafana-simple-json-datasource
-    access: proxy
+    access: Browser
     isDefault: false
-    url: http://localhost:3333
+    url: http://ea-datasource:8083
     # don't set this to true in production
     editable: true
