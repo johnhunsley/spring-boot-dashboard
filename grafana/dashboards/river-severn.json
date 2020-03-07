@@ -18,12 +18,38 @@
   "links": [],
   "panels": [
     {
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "title": "Water Temperature",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 6,
+      "panels": [],
+      "title": "River Level",
+      "type": "row"
+    },
+    {
       "datasource": "SimpleJson",
       "gridPos": {
         "h": 14,
         "w": 6,
         "x": 0,
-        "y": 0
+        "y": 2
       },
       "id": 4,
       "options": {
@@ -53,13 +79,14 @@
                 }
               ]
             },
+            "title": "Current Level",
             "unit": "lengthm"
           },
           "overrides": [],
           "values": false
         },
         "orientation": "auto",
-        "showThresholdLabels": true,
+        "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
       "pluginVersion": "6.6.1",
@@ -72,11 +99,14 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Current Level",
+      "title": "",
+      "transparent": true,
       "type": "gauge"
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "2077": "green"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -87,7 +117,7 @@
         "h": 14,
         "w": 18,
         "x": 6,
-        "y": 0
+        "y": 2
       },
       "hiddenSeries": false,
       "id": 2,
@@ -146,12 +176,13 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Last 5 Days",
+      "title": "History",
       "tooltip": {
         "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
+      "transparent": true,
       "type": "graph",
       "xaxis": {
         "buckets": null,
