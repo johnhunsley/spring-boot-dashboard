@@ -12,12 +12,69 @@
       }
     ]
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
   "links": [],
   "panels": [
+    {
+      "datasource": "SimpleJson",
+      "gridPos": {
+        "h": 14,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "firstNotNull"
+          ],
+          "defaults": {
+            "decimals": 3,
+            "mappings": [],
+            "max": 6,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "light-red",
+                  "value": null
+                },
+                {
+                  "color": "light-green",
+                  "value": 0.49
+                },
+                {
+                  "color": "light-blue",
+                  "value": 2.65
+                }
+              ]
+            },
+            "unit": "lengthm"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.6.1",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "2077",
+          "type": "timeserie"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current Level",
+      "type": "gauge"
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -27,9 +84,9 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 15,
-        "w": 24,
-        "x": 0,
+        "h": 14,
+        "w": 18,
+        "x": 6,
         "y": 0
       },
       "hiddenSeries": false,
@@ -39,7 +96,7 @@
         "current": false,
         "max": false,
         "min": false,
-        "show": true,
+        "show": false,
         "total": false,
         "values": false
       },
@@ -64,11 +121,32 @@
           "type": "timeserie"
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "custom",
+          "fill": true,
+          "fillColor": "rgba(255, 115, 131, 0.22)",
+          "line": true,
+          "lineColor": "rgb(196, 22, 42)",
+          "op": "lt",
+          "value": 0.49,
+          "yaxis": "left"
+        },
+        {
+          "colorMode": "custom",
+          "fill": true,
+          "fillColor": "rgba(50, 116, 217, 0.2)",
+          "line": true,
+          "lineColor": "rgba(31, 96, 196, 0.6)",
+          "op": "gt",
+          "value": 2.65,
+          "yaxis": "left"
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "River Severn - Welsh Bridge",
+      "title": "Last 5 Days",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -85,19 +163,19 @@
       "yaxes": [
         {
           "format": "short",
-          "label": null,
+          "label": "metres",
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "6",
+          "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -114,7 +192,7 @@
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-5d",
     "to": "now"
   },
   "timepicker": {
@@ -123,7 +201,7 @@
     ]
   },
   "timezone": "",
-  "title": "River Severn",
+  "title": "River Severn - Welsh Bridge",
   "uid": "J88NBElZk",
   "version": 1
 }

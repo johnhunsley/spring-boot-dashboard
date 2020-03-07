@@ -28,7 +28,7 @@ services:
     environment:
       - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
       - GF_USERS_DISABLE_LOGIN_FORM=true
-      - GF_ANONYMOUS_AUTH_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
     ports:
       - "3000:3000"
     depends_on:
