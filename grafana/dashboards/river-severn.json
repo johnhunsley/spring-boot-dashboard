@@ -178,7 +178,7 @@
       "timeShift": null,
       "title": "History",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
