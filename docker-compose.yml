@@ -6,6 +6,11 @@ services:
       - JAVA_OPTS=-Xms128M -Xmx256M
     ports:
       - "8080:8080"
+  rabbitmq:
+    image: rabbit-prom:latest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
   ea-datasource:
     image:  ea-datasource:latest
     environment:
